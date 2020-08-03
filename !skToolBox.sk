@@ -1649,8 +1649,23 @@ location property condition (within|between) %location% and %location%:
 		expr-1's z-pos is between min(expr-2's z-pos and expr-3's x-pos) and max(expr-2's x-pos and expr-3's x-pos)
 		continue
 
+#  ______                _   _                 
+# |  ____|              | | (_)                TM
+# | |__ _   _ _ __   ___| |_ _  ___  _ __  ___ 
+# |  __| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
+# | |  | |_| | | | | (__| |_| | (_) | | | \__ \
+# |_|   \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
+# Name: Grab UUID
+# Description: Returns the UUID of the specified player. Useful in functions.
+# Usage: set {variable::%getUUID({_p})%} // more uses, this is just one example.
+function getUUID(p: player) :: string:
+  return uuid of {_p} parsed as player
 
-
+# Name: Get Essentials Balance
+# Description: Returns the Essentials balance of a player.
+# Usage: message "&aBalance: %getEssentialsBalanec(player)%" // one of many uses.
+function getEssentialsBalance(p: player) :: number:
+  return {_p}'s balance
 #
 #   _______ _              ______           _  
 #  |__   __| |            |  ____|         | | 
